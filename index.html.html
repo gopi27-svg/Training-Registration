@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Training Registration Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6a5acd; /* SlateBlue */
+      --secondary-color: #483d8b; /* DarkSlateBlue */
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --border-color: #d1d5db;
+      --input-bg: #f9fafb;
+      --success-color: #22c55e;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    form {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 12px;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--secondary-color);
+      margin-bottom: 2.5rem;
+      font-size: 2em;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.875rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: var(--input-bg);
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+    }
+
+    input[type="submit"] {
+      margin-top: 2rem;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    input[type="submit"]:hover {
+        background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        transform: translateY(-2px);
+    }
+
+    #thankYouMessage {
+      text-align: center;
+      font-size: 1.5em;
+      color: var(--success-color);
+      font-weight: 600;
+      display: none;
+    }
+
+    #postBridge {
+      display: none;
+    }
+
+    .banner {
+      margin-bottom: 2rem;
+    }
+
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .note {
+      margin-top: 1rem;
+      color: #6b7280;
+      font-size: 0.875em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe id="postBridge" name="postBridge" style="display:none;"></iframe>
+
+  <form id="trainingForm" method="POST" target="postBridge"
+        action="https://script.google.com/macros/s/AKfycbzAbBPXZj3TQSyyo_nobjJGFmPSD6olPICB3jA9y_EkB5Qgxi8zcQ3SHzT9sE__JVRYrg/exec">
+    <div class="banner">
+      <img src="https://i.postimg.cc/44S4b7jP/USDC-Theme.jpg" alt="USDC Theme"/>
+    </div>
+
+    <h2>Training Registration</h2>
+
+    <div class="form-group">
+      <label for="competency">Competency</label>
+      <select id="competency" name="competency" required>
+        <option value="" disabled selected>--Select--</option>
+        <option value="MS-Offcie 365">MS-Office 365</option>
+        <option value="Business Etiquette and Communication">Business Etiquette and Communication</option>
+        <option value="Conflict Resolution (Intermediate)">Conflict Resolution (Intermediate)</option>
+        <option value="Conflict Resolution (Advance)">Conflict Resolution (Advance)</option>
+        <option value="Being Accountabel & Taking Ownership">Being Accountable & Taking Ownership</option>
+        <option value="MS-Excel (Intermediate)">MS-Excel (Intermediate)</option>
+        <option value="MS-Excel(Advance)">MS-Excel (Advance)</option>
+        <option value="Active Listening (Intermediate)">Active Listening (Intermediate)</option>
+        <option value="Active Listening (Advance)">Active Listening (Advance)</option>
+        <option value="Emotional Intelligence (Intermediate)">Emotional Intelligence (Intermediate)</option>
+        <option value="Emotional Intelligence (Advance)">Emotional Intelligence (Advance)</option>
+        <option value="Generative AI ">Generative AI</option>
+        <option value="Problem Solving">Problem Solving</option>
+        <option value="Effective Time Management">Effective Time Management</option>
+        <option value="Women Health & Hygine">Women Health & Hygine</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="employeeCode">Employee Code</label>
+      <input type="text" id="employeeCode" name="employeeCode" placeholder="e.g., USDC001" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="text" id="contactNumber" name="contactNumber" placeholder="Enter your contact number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="designation">Designation</label>
+      <input type="text" id="designation" name="designation" placeholder="Enter your designation" required>
+    </div>
+
+    <div class="form-group">
+      <label for="businessEntity">Business Entity</label>
+      <select id="businessEntity" name="businessEntity" required>
+        <option value="" disabled selected>--Select--</option>
+        <option value="Learn Online">Learn Online</option>
+        <option value="Learn Overseas">Learn Overseas</option>
+        <option value="Deep Integration">Deep Integration</option>
+        <option value="USDC">USDC</option>
+        <option value="Guyana">Guyana</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="" disabled selected>--Select--</option>
+        <option>Accounts & Reporting</option>
+        <option>Administration</option>
+        <option>Branding</option>
+        <option>Business Development</option>
+        <option>Business Intelligence</option>
+        <option>Business Operations</option>
+        <option>Centralized Procurement</option>
+        <option>Certification</option>
+        <option>Channel Sales</option>
+        <option>Content Development & Management</option>
+        <option>Document Verification</option>
+        <option>Engage</option>
+        <option>Human Resource</option>
+        <option>Inside Sales</option>
+        <option>Learning</option>
+        <option>Learning Management Systems</option>
+        <option>Marketing</option>
+        <option>Operations</option>
+        <option>Performance Marketing</option>
+        <option>Sales Operations (CP)</option>
+        <option>Sales Operations (CP-SP)</option>
+        <option>Sales Operations (PAD)</option>
+        <option>Sales Operations (POB)</option>
+        <option>Technology</option>
+        <option>University Relations</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select id="location" name="location" required>
+        <option value="" disabled selected>--Select--</option>
+        <option>Bangalore</option>
+        <option>Hyderabad</option>
+        <option>Chennai</option>
+        <option>Pune</option>
+        <option>Remote</option>
+      </select>
+    </div>
+
+    <input type="submit" id="submitBtn" value="Submit Registration">
+    
+  </form>
+
+  <div id="thankYouMessage">Thank you! Your registration has been submitted successfully. 😊</div>
+
+  <script>
+    const form = document.getElementById('trainingForm');
+    const btn  = document.getElementById('submitBtn');
+    const bridge = document.getElementById('postBridge');
+
+    bridge.addEventListener('load', () => {
+      form.style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
+
+    form.addEventListener('submit', () => {
+      btn.value = 'Submitting...';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
